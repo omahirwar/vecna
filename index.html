@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Made by hi_vecna | Premium 3D Experience</title>
+    <title>Made by hi_vecna | Web3 Crypto Experience</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,86 +14,95 @@
 </head>
 
 <body>
+
     <header class="header">
         <a href="#" class="logo">
             <span class="logo-icon">
-                <i class="fa-solid fa-code"></i>
+                <i class="fa-solid fa-coins"></i>
             </span>
             <span class="logo-text">hi_vecna</span>
         </a>
         <nav class="nav">
             <a href="#home" class="nav-link active">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#gallery" class="nav-link">Contributer</a>
-            <a href="#contact" class="nav-link">Games-Quiz</a>
+            <a href="#about" class="nav-link">Blockchain</a>
+            <a href="#gallery" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Launch App</a>
         </nav>
         <button class="cta-button">
-            <span>Get Started</span>
-            <i class="fa-solid fa-arrow-right"></i>
+            <span>Connect Wallet</span>
+            <i class="fa-solid fa-wallet"></i>
         </button>
     </header>
 
-    <model-viewer src="bee_flying.glb" id="bee-model" camera-orbit="90deg 90deg" auto-rotate-delay="0"
-        interaction-prompt="none" touch-action="none" autoplay></model-viewer>
+    <!-- 3D Model -->
+    <model-viewer src="crypto_coin.glb" id="crypto-model"
+        camera-orbit="90deg 90deg"
+        auto-rotate
+        interaction-prompt="none"
+        touch-action="none"
+        autoplay>
+    </model-viewer>
 
+    <!-- HERO SECTION -->
     <section class="home" id="home">
         <div class="hero-content">
-            <span class="hero-label reveal">Vecna 3D Experience</span>
+            <span class="hero-label reveal">Vecna Web3 Experience</span>
             <h1 class="hero-title reveal animation-delay-100">
-                <span class="title-line">Nature's Most</span>
-                <span class="title-line gold-text">Remarkable</span>
-                <span class="title-line">Creation</span>
+                <span class="title-line">The Future of</span>
+                <span class="title-line gold-text">Decentralized</span>
+                <span class="title-line">Innovation</span>
             </h1>
             <p class="hero-description reveal animation-delay-200">
-                Discover the intricate beauty of pollinators through an award-winning
-                interactive 3D journey that celebrates the wonders of the natural world.
+                Explore the power of blockchain, smart contracts, and digital assets
+                through an immersive 3D crypto experience built for the next generation internet.
             </p>
             <div class="hero-buttons reveal animation-delay-300">
                 <button class="btn-primary">
-                    <span>Explore Now</span>
+                    <span>Explore dApps</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
-                <button class="btn-secondary">Learn More</button>
+                <button class="btn-secondary">Read Whitepaper</button>
             </div>
         </div>
     </section>
 
+    <!-- ABOUT / BLOCKCHAIN -->
     <section class="about" id="about">
         <div class="about-content">
             <div class="about-header">
-                <span class="section-label reveal">Discovery</span>
+                <span class="section-label reveal">Technology</span>
                 <h2 class="section-title reveal animation-delay-100">
-                    The Art of <span class="gold-text">Pollination</span>
+                    Power of <span class="gold-text">Blockchain</span>
                 </h2>
             </div>
             <div class="about-grid">
                 <div class="about-text reveal animation-delay-200">
                     <p class="lead-text">
-                        Bees are nature's master architects and essential guardians of our ecosystem,
-                        responsible for pollinating over 80% of flowering plants worldwide.
+                        Blockchain enables secure, transparent, and decentralized transactions
+                        without the need for intermediaries.
                     </p>
                     <p class="body-text">
-                        Their intricate dance language, remarkable navigation abilities, and tireless
-                        work ethic make them one of the most fascinating creatures on Earth. Each
-                        colony operates as a superorganism, with thousands of individuals working
-                        in perfect harmony.
+                        Smart contracts automate trust. DeFi removes financial barriers.
+                        NFTs empower creators. Web3 gives control back to users.
                     </p>
+
                     <div class="about-stats">
                         <div class="stat-item">
-                            <span class="stat-number">80%</span>
-                            <span class="stat-label">Plants Pollinated</span>
+                            <span class="stat-number">$2T+</span>
+                            <span class="stat-label">Crypto Market Cap</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">20K+</span>
-                            <span class="stat-label">Species Worldwide</span>
+                            <span class="stat-number">300M+</span>
+                            <span class="stat-label">Wallet Users</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">5M</span>
-                            <span class="stat-label">Flowers Per Colony</span>
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Active dApps</span>
                         </div>
                     </div>
+
                     <a href="#" class="link-button">
-                        <span>Discover More</span>
+                        <span>Learn More About Web3</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
@@ -101,112 +110,122 @@
         </div>
     </section>
 
+    <!-- PROJECTS / GALLERY -->
     <section class="gallery" id="gallery">
         <div class="gallery-header">
-            <span class="section-label reveal">Collection</span>
+            <span class="section-label reveal">Portfolio</span>
             <h2 class="section-title reveal animation-delay-100">
-                Visual <span class="gold-text">Gallery</span>
+                Featured <span class="gold-text">Crypto Projects</span>
             </h2>
             <p class="section-description reveal animation-delay-200">
-                Explore our curated collection of stunning macro photography
+                Explore our Web3 innovations and blockchain-based solutions
             </p>
         </div>
+
         <div class="gallery-content">
+
             <div class="gallery-card reveal animation-delay-200">
                 <div class="card-inner">
                     <div class="card-image">
-                        <img src="bee1.png" alt="Honeybee on flower">
+                        <img src="defi.png" alt="DeFi Platform">
                     </div>
                     <div class="card-overlay">
-                        <span class="card-title">Golden Harvest</span>
-                        <span class="card-subtitle">Macro Photography</span>
+                        <span class="card-title">DeFi Protocol</span>
+                        <span class="card-subtitle">Decentralized Finance</span>
                     </div>
                 </div>
                 <div class="card-accent"></div>
             </div>
+
             <div class="gallery-card reveal animation-delay-300">
                 <div class="card-inner">
+                    <div class="card-image">
+                        <img src="nft.png" alt="NFT Marketplace">
+                    </div>
                     <div class="card-overlay">
-                        <span class="card-title">Morning Dew</span>
-                        <span class="card-subtitle">Nature Series</span>
+                        <span class="card-title">NFT Marketplace</span>
+                        <span class="card-subtitle">Digital Collectibles</span>
                     </div>
                 </div>
                 <div class="card-accent"></div>
             </div>
+
             <div class="gallery-card reveal animation-delay-400">
                 <div class="card-inner">
                     <div class="card-image">
-                        <img src="bee3.png" alt="Bee collecting pollen">
+                        <img src="dao.png" alt="DAO Platform">
                     </div>
                     <div class="card-overlay">
-                        <span class="card-title">Pollen Dance</span>
-                        <span class="card-subtitle">Wildlife Portrait</span>
+                        <span class="card-title">DAO Governance</span>
+                        <span class="card-subtitle">Community Powered</span>
                     </div>
                 </div>
                 <div class="card-accent"></div>
             </div>
+
         </div>
     </section>
 
+    <!-- CONTACT / LAUNCH APP -->
     <section class="contact" id="contact">
         <div class="contact-container">
             <form class="contact-form reveal animation-delay-200">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Your name" required>
+                    <label for="name">Wallet Address</label>
+                    <input type="text" id="name" placeholder="0x..." required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="your@email.com" required>
+                    <label for="email">Email (Optional)</label>
+                    <input type="email" id="email" placeholder="your@email.com">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="Tell us about your project..." rows="4" required></textarea>
+                    <label for="message">Project Inquiry</label>
+                    <textarea id="message" placeholder="Tell us about your Web3 idea..." rows="4"></textarea>
                 </div>
                 <button type="submit" class="btn-primary full-width">
-                    <span>Send Message</span>
-                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Launch dApp</span>
+                    <i class="fa-solid fa-rocket"></i>
                 </button>
             </form>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">
                     <span class="logo-icon">
-                        <i class="fa-solid fa-code"></i>
+                        <i class="fa-solid fa-cube"></i>
                     </span>
-                    <span class="logo-text">CodeZenithAI</span>
+                    <span class="logo-text">CodeZenith Web3</span>
                 </a>
-                <p class="footer-tagline">Crafting immersive digital experiences</p>
+                <p class="footer-tagline">Building the decentralized future</p>
             </div>
+
             <div class="footer-links">
                 <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
+                <a href="#about">Blockchain</a>
+                <a href="#gallery">Projects</a>
+                <a href="#contact">Launch</a>
             </div>
+
             <div class="footer-social">
-                <a href="#" class="social-link" aria-label="Twitter">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/code_zenith.ai?igsh=MzR4OGxvdG82bDFt&utm_source=qr" class="social-link" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
+                <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 Vecna. All rights reserved.</p>
+            <p>&copy; 2026 Vecna Web3. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-</body>
+    <script type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
 
+</body>
 </html>
