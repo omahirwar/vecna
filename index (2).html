@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made by hi_vecna | Premium 3D Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Miden Info Section ── */
+        .miden-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0d0d0d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .miden-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(255,180,0,0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .miden-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .miden-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,180,0,0.1);
+            border: 1px solid rgba(255,180,0,0.3);
+            color: #FFB400;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .miden-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .miden-subtitle {
+            color: rgba(255,255,255,0.5);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .miden-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+        }
+        .miden-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 32px 28px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .miden-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FFB400, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .miden-card:hover {
+            border-color: rgba(255,180,0,0.25);
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.05);
+        }
+        .miden-card:hover::after { opacity: 1; }
+        .miden-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,180,0,0.12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #FFB400;
+            margin-bottom: 20px;
+        }
+        .miden-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .miden-card p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+        .miden-stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+        .miden-stat {
+            text-align: center;
+        }
+        .miden-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FFB400;
+            display: block;
+        }
+        .miden-stat-lbl {
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+        }
+        .miden-use-cases {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .miden-use-cases h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .use-cases-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .use-case-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+        .use-case-item:hover {
+            border-color: rgba(255,180,0,0.2);
+            background: rgba(255,180,0,0.04);
+        }
+        .use-case-item i {
+            color: #FFB400;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .use-case-item span {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
+        }
+        .miden-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+        .miden-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #FFB400, #FF8C00);
+            color: #000;
+            font-weight: 600;
+            font-size: 0.875rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .miden-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255,180,0,0.3);
+        }
+
+        /* ── Quiz Section ── */
+        .quiz-section {
+            padding: 100px 5%;
+            background: #080808;
+        }
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .quiz-wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .quiz-progress-bar {
+            height: 4px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 4px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+        .quiz-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FFB400, #FF8C00);
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+        .quiz-question-num {
+            font-size: 0.75rem;
+            color: #FFB400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .quiz-question-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        .quiz-option {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 14px 20px;
+            color: rgba(255,255,255,0.75);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .quiz-option:hover:not(:disabled) {
+            border-color: rgba(255,180,0,0.35);
+            background: rgba(255,180,0,0.06);
+            color: #fff;
+        }
+        .quiz-option .opt-label {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+        }
+        .quiz-option.correct {
+            border-color: #22c55e;
+            background: rgba(34,197,94,0.08);
+            color: #fff;
+        }
+        .quiz-option.correct .opt-label {
+            background: #22c55e;
+            border-color: #22c55e;
+            color: #000;
+        }
+        .quiz-option.wrong {
+            border-color: #ef4444;
+            background: rgba(239,68,68,0.08);
+            color: rgba(255,255,255,0.5);
+        }
+        .quiz-option.wrong .opt-label {
+            background: #ef4444;
+            border-color: #ef4444;
+            color: #fff;
+        }
+        .quiz-option:disabled { cursor: default; }
+        .quiz-feedback {
+            min-height: 40px;
+            margin-bottom: 16px;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.03);
+            display: none;
+        }
+        .quiz-feedback.show { display: block; }
+        .quiz-feedback.correct-fb { color: #86efac; border-left: 3px solid #22c55e; }
+        .quiz-feedback.wrong-fb { color: #fca5a5; border-left: 3px solid #ef4444; }
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .quiz-score-display {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+        .quiz-score-display span { color: #FFB400; font-weight: 600; }
+        .quiz-next-btn {
+            background: linear-gradient(135deg, #FFB400, #FF8C00);
+            border: none;
+            border-radius: 50px;
+            color: #000;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 10px 24px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+        .quiz-next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,180,0,0.3);
+        }
+        .quiz-next-btn.visible { display: flex; }
+        .quiz-result {
+            text-align: center;
+            display: none;
+        }
+        .quiz-result.show { display: block; }
+        .quiz-result-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        .quiz-result h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .quiz-result p {
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .quiz-final-score {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #FFB400;
+            font-family: 'Playfair Display', serif;
+            margin: 20px 0;
+        }
+        .quiz-restart-btn {
+            background: transparent;
+            border: 1px solid rgba(255,180,0,0.4);
+            border-radius: 50px;
+            color: #FFB400;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 10px 28px;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: all 0.3s ease;
+        }
+        .quiz-restart-btn:hover {
+            background: rgba(255,180,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-code"></i>
+            </span>
+            <span class="logo-text">hi_vecna</span>
+        </a>
+        <nav class="nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#miden" class="nav-link">Miden</a>
+            <a href="#gallery" class="nav-link">Contributer</a>
+            <a href="#quiz" class="nav-link">Games-Quiz</a>
+        </nav>
+        <button class="cta-button">
+            <span>Get Started</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </header>
+
+    <model-viewer src="bee_flying.glb" id="bee-model" camera-orbit="90deg 90deg" auto-rotate-delay="0"
+        interaction-prompt="none" touch-action="none" autoplay></model-viewer>
+
+    <section class="home" id="home">
+        <div class="hero-content">
+            <span class="hero-label reveal">Vecna 3D Experience</span>
+            <h1 class="hero-title reveal animation-delay-100">
+                <span class="title-line">Nature's Most</span>
+                <span class="title-line gold-text">Remarkable</span>
+                <span class="title-line">Creation</span>
+            </h1>
+            <p class="hero-description reveal animation-delay-200">
+                Discover the intricate beauty of pollinators through an award-winning
+                interactive 3D journey that celebrates the wonders of the natural world.
+            </p>
+            <div class="hero-buttons reveal animation-delay-300">
+                <button class="btn-primary">
+                    <span>Explore Now</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-header">
+                <span class="section-label reveal">Discovery</span>
+                <h2 class="section-title reveal animation-delay-100">
+                    The Art of <span class="gold-text">Pollination</span>
+                </h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal animation-delay-200">
+                    <p class="lead-text">
+                        Bees are nature's master architects and essential guardians of our ecosystem,
+                        responsible for pollinating over 80% of flowering plants worldwide.
+                    </p>
+                    <p class="body-text">
+                        Their intricate dance language, remarkable navigation abilities, and tireless
+                        work ethic make them one of the most fascinating creatures on Earth. Each
+                        colony operates as a superorganism, with thousands of individuals working
+                        in perfect harmony.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">80%</span>
+                            <span class="stat-label">Plants Pollinated</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20K+</span>
+                            <span class="stat-label">Species Worldwide</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5M</span>
+                            <span class="stat-label">Flowers Per Colony</span>
+                        </div>
+                    </div>
+                    <a href="#" class="link-button">
+                        <span>Discover More</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ MIDEN CRYPTO SECTION ══════════════ -->
+    <section class="miden-section" id="miden">
+        <div class="miden-header">
+            <div class="miden-badge reveal">
+                <i class="fa-solid fa-shield-halved"></i>
+                Crypto Project
+            </div>
+            <h2 class="miden-title reveal animation-delay-100">
+                Introducing <span class="gold-text">Miden</span>
+            </h2>
+            <p class="miden-subtitle reveal animation-delay-200">
+                Practical privacy for the future of finance — the programmable privacy network for the next generation of compliant finance.
+            </p>
+        </div>
+
+        <div class="miden-grid">
+            <div class="miden-card reveal animation-delay-100">
+                <div class="miden-card-icon">
+                    <i class="fa-solid fa-eye-slash"></i>
+                </div>
+                <h3>Customizable Privacy</h3>
+                <p>Miden gives builders the choice between public and private transactions, enabling a new class of business applications that were previously impossible onchain.</p>
+            </div>
+            <div class="miden-card reveal animation-delay-200">
+                <div class="miden-card-icon">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+                <h3>Quantum Secure</h3>
+                <p>Built with post-quantum cryptography, Miden is designed to future-proof your business onchain — resistant to tomorrow's most advanced computing threats.</p>
+            </div>
+            <div class="miden-card reveal animation-delay-300">
+                <div class="miden-card-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3>Unrivaled Scalability</h3>
+                <p>Because Miden executes transactions locally using pioneering ZK architecture, the network guarantees unmatched efficiency for high-volume financial applications.</p>
+            </div>
+        </div>
+
+        <div class="miden-stats-row reveal">
+            <div class="miden-stat">
+                <span class="miden-stat-num">ZK</span>
+                <span class="miden-stat-lbl">Architecture</span>
+            </div>
+            <div class="miden-stat">
+                <span class="miden-stat-num">8+</span>
+                <span class="miden-stat-lbl">Top Investors</span>
+            </div>
+            <div class="miden-stat">
+                <span class="miden-stat-num">100%</span>
+                <span class="miden-stat-lbl">Private Execution</span>
+            </div>
+            <div class="miden-stat">
+                <span class="miden-stat-num">PQC</span>
+                <span class="miden-stat-lbl">Post-Quantum</span>
+            </div>
+        </div>
+
+        <div class="miden-use-cases reveal animation-delay-200">
+            <h3>Real-World Use Cases</h3>
+            <div class="use-cases-list">
+                <div class="use-case-item">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    <span>Onchain Payroll</span>
+                </div>
+                <div class="use-case-item">
+                    <i class="fa-solid fa-key"></i>
+                    <span>Private Multisig</span>
+                </div>
+                <div class="use-case-item">
+                    <i class="fa-solid fa-vault"></i>
+                    <span>Treasury Management</span>
+                </div>
+                <div class="use-case-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Prediction Markets</span>
+                </div>
+                <div class="use-case-item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Neobank</span>
+                </div>
+                <div class="use-case-item">
+                    <i class="fa-solid fa-coins"></i>
+                    <span>Private Stablecoins</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="miden-cta reveal">
+            <a href="https://miden.xyz/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Explore Miden Network
+            </a>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="gallery-header">
+            <span class="section-label reveal">Miden Network</span>
+            <h2 class="section-title reveal animation-delay-100">
+                Core <span class="gold-text">Features</span>
+            </h2>
+            <p class="section-description reveal animation-delay-200">
+                Explore the three pillars that make Miden the future of onchain finance
+            </p>
+        </div>
+        <div class="gallery-content">
+            <div class="gallery-card reveal animation-delay-200">
+                <div class="card-inner">
+                    <div class="card-image">
+                        <img src="bee1.png" alt="Miden ZK Privacy">
+                    </div>
+                    <div class="card-overlay">
+                        <span class="card-title">ZK Privacy</span>
+                        <span class="card-subtitle">Zero-Knowledge Proofs</span>
+                    </div>
+                </div>
+                <div class="card-accent"></div>
+            </div>
+            <div class="gallery-card reveal animation-delay-300">
+                <div class="card-inner">
+                    <div class="card-overlay">
+                        <span class="card-title">Quantum Secure</span>
+                        <span class="card-subtitle">Post-Quantum Cryptography</span>
+                    </div>
+                </div>
+                <div class="card-accent"></div>
+            </div>
+            <div class="gallery-card reveal animation-delay-400">
+                <div class="card-inner">
+                    <div class="card-image">
+                        <img src="bee3.png" alt="Miden Local Execution">
+                    </div>
+                    <div class="card-overlay">
+                        <span class="card-title">Local Execution</span>
+                        <span class="card-subtitle">Unrivaled Scalability</span>
+                    </div>
+                </div>
+                <div class="card-accent"></div>
+            </div>
+        </div>
+
+        <!-- Miden Feature Details Below Gallery Cards -->
+        <div style="max-width:1100px; margin: 60px auto 0; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 0 5%;">
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,180,0,0.15); border-radius:16px; padding:28px 24px; position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg, transparent, #FFB400, transparent);"></div>
+                <div style="width:42px; height:42px; background:rgba(255,180,0,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+                    <i class="fa-solid fa-eye-slash" style="color:#FFB400;"></i>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif; color:#fff; font-size:1.05rem; margin-bottom:10px;">ZK Privacy</h4>
+                <p style="color:rgba(255,255,255,0.45); font-size:0.83rem; line-height:1.7;">Miden uses Zero-Knowledge proofs to enable private transaction execution. Users can choose between fully public or completely private transactions — giving builders a new class of financial applications.</p>
+                <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <span style="background:rgba(255,180,0,0.1); color:#FFB400; font-size:0.7rem; padding:4px 10px; border-radius:20px; border:1px solid rgba(255,180,0,0.2);">Private Transfers</span>
+                    <span style="background:rgba(255,180,0,0.1); color:#FFB400; font-size:0.7rem; padding:4px 10px; border-radius:20px; border:1px solid rgba(255,180,0,0.2);">ZK Proofs</span>
+                </div>
+            </div>
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,180,0,0.15); border-radius:16px; padding:28px 24px; position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg, transparent, #FFB400, transparent);"></div>
+                <div style="width:42px; height:42px; background:rgba(255,180,0,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+                    <i class="fa-solid fa-atom" style="color:#FFB400;"></i>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif; color:#fff; font-size:1.05rem; margin-bottom:10px;">Quantum Secure</h4>
+                <p style="color:rgba(255,255,255,0.45); font-size:0.83rem; line-height:1.7;">Built with post-quantum cryptography (PQC), Miden is future-proof against threats from tomorrow's quantum computers — ensuring your business stays protected as technology evolves.</p>
+                <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <span style="background:rgba(255,180,0,0.1); color:#FFB400; font-size:0.7rem; padding:4px 10px; border-radius:20px; border:1px solid rgba(255,180,0,0.2);">PQC</span>
+                    <span style="background:rgba(255,180,0,0.1); color:#FFB400; font-size:0.7rem; padding:4px 10px; border-radius:20px; border:1px solid rgba(255,180,0,0.2);">Future-proof</span>
+                </div>
+            </div>
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,180,0,0.15); border-radius:16px; padding:28px 24px; position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg, transparent, #FFB400, transparent);"></div>
+                <div style="width:42px; height:42px; background:rgba(255,180,0,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+                    <i class="fa-solid fa-bolt" style="color:#FFB400;"></i>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif; color:#fff; font-size:1.05rem; margin-bottom:10px;">Local Execution</h4>
+                <p style="color:rgba(255,255,255,0.45); font-size:0.83rem; line-height:1.7;">Transactions execute locally on the user's device before being submitted to the network. This means unrivaled throughput and efficiency for high-volume financial applications like neobanks and payroll.</p>
+                <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <span style="background:rgba(255,180,0,0.1); color:#FFB400; font-size:0.7rem; padding:4px 10px; border-radius:20px; border:1px solid rgba(255,180,0,0.2);">High Throughput</span>
+                    <span style="background:rgba(255,180,0,0.1); color:#FFB400; font-size:0.7rem; padding:4px 10px; border-radius:20px; border:1px solid rgba(255,180,0,0.2);">Scalable</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ CRYPTO QUIZ SECTION ══════════════ -->
+    <section class="quiz-section" id="quiz">
+        <div class="quiz-header">
+            <span class="section-label reveal">Games-Quiz</span>
+            <h2 class="section-title reveal animation-delay-100">
+                Miden <span class="gold-text">Crypto Quiz</span>
+            </h2>
+            <p class="section-description reveal animation-delay-200">
+                Test your knowledge about Miden Network & blockchain privacy
+            </p>
+        </div>
+
+        <div class="quiz-wrapper reveal animation-delay-200">
+            <!-- Quiz Game -->
+            <div id="quizGame">
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+                <div class="quiz-question-num" id="questionNum">Question 1 of 10</div>
+                <div class="quiz-question-text" id="questionText"></div>
+                <div class="quiz-options" id="optionsContainer"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div class="quiz-nav">
+                    <div class="quiz-score-display">Score: <span id="scoreDisplay">0</span></div>
+                    <button class="quiz-next-btn" id="nextBtn">
+                        Next <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Result Screen -->
+            <div class="quiz-result" id="quizResult">
+                <div class="quiz-result-icon" id="resultIcon"></div>
+                <h3 id="resultTitle"></h3>
+                <p id="resultMsg"></p>
+                <div class="quiz-final-score" id="finalScore"></div>
+                <p style="color:rgba(255,255,255,0.35); font-size:0.8rem;">out of 10 questions</p>
+                <br>
+                <button class="quiz-restart-btn" onclick="restartQuiz()">
+                    <i class="fa-solid fa-rotate-right"></i> Play Again
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <form class="contact-form reveal animation-delay-200">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Tell us about your project..." rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary full-width">
+                    <span>Send Message</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </span>
+                    <span class="logo-text">CodeZenithAI</span>
+                </a>
+                <p class="footer-tagline">Crafting immersive digital experiences</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#miden">Miden</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/code_zenith.ai?igsh=MzR4OGxvdG82bDFt&utm_source=qr" class="social-link" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vecna. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+    <!-- ══════════════ QUIZ SCRIPT ══════════════ -->
+    <script>
+        const quizData = [
+            {
+                q: "What is Miden Network primarily designed for?",
+                opts: ["Decentralized social media", "Programmable privacy for compliant finance", "NFT marketplace", "Centralized exchange"],
+                correct: 1,
+                explanation: "Miden is the programmable privacy network for the next generation of compliant finance — combining privacy, scalability, and quantum resistance."
+            },
+            {
+                q: "What cryptographic technology does Miden use to enable private transaction execution?",
+                opts: ["SHA-256 hashing", "RSA encryption", "Zero-Knowledge (ZK) proofs", "AES symmetric encryption"],
+                correct: 2,
+                explanation: "Miden uses pioneering ZK (Zero-Knowledge) architecture which enables local and private transaction execution, creating unmatched network efficiency."
+            },
+            {
+                q: "What makes Miden 'quantum secure'?",
+                opts: ["It uses quantum computers", "It runs on satellite networks", "Post-quantum cryptography (PQC)", "Classical encryption with 4096-bit keys"],
+                correct: 2,
+                explanation: "Miden is built with post-quantum cryptography (PQC), designed to future-proof businesses against threats from quantum computing."
+            },
+            {
+                q: "How does Miden achieve unrivaled scalability?",
+                opts: ["By using a single centralized server", "By executing transactions locally on the user side", "By limiting the number of users", "By removing all validation steps"],
+                correct: 1,
+                explanation: "Miden executes transactions locally, so the network doesn't get bottlenecked — guaranteeing efficiency for high-volume financial applications."
+            },
+            {
+                q: "Which of these is a real-world use case supported by Miden?",
+                opts: ["Breeding digital pets", "Private Multisig treasury management", "Streaming video content", "Social media likes"],
+                correct: 1,
+                explanation: "Miden supports Private Multisig — coordinating approvals and treasury actions while keeping signers, balances, and transaction details private."
+            },
+            {
+                q: "What does 'ZK' stand for in blockchain context?",
+                opts: ["Zero Kernel", "Zero Knowledge", "Zone Key", "Zeta Kryptography"],
+                correct: 1,
+                explanation: "ZK stands for Zero-Knowledge — a cryptographic method that proves a statement is true without revealing any underlying information."
+            },
+            {
+                q: "Miden enables which type of stablecoins?",
+                opts: ["Inflationary stablecoins", "Algorithmic stablecoins only", "Truly private stablecoins", "Centralized fiat-backed only"],
+                correct: 2,
+                explanation: "Miden enables truly private stablecoins. Despite cypherpunk tradition, most stablecoins today are not truly private — Miden changes that."
+            },
+            {
+                q: "Which prominent crypto-focused VC firm is among Miden's investors?",
+                opts: ["Goldman Sachs Crypto", "JP Morgan Blockchain", "a16z Crypto", "BlackRock Digital"],
+                correct: 2,
+                explanation: "a16z Crypto (Andreessen Horowitz's crypto fund) is one of Miden's key investors, alongside other top VCs like 1kx, Hack VC, and P2 Ventures."
+            },
+            {
+                q: "What is an 'Execution Trace' in Miden's architecture?",
+                opts: ["A log of user login history", "A verifiable record of computation without exposing sensitive inputs", "A trace of network packets", "A blockchain explorer feature"],
+                correct: 1,
+                explanation: "An Execution Trace in Miden is a verifiable record of how computation unfolds, without exposing sensitive inputs or internal state."
+            },
+            {
+                q: "What is the main advantage of Miden's 'Onchain Payroll' use case?",
+                opts: ["Faster internet speeds", "Salary payments without exposing employee or company data", "Free international transfers only", "Automatic tax filing"],
+                correct: 1,
+                explanation: "Miden's Onchain Payroll enables salary payments and compensation onchain without exposing employee or company data — privacy-first payroll."
+            }
+        ];
+
+        let current = 0, score = 0, answered = false;
+
+        function loadQuestion() {
+            const q = quizData[current];
+            document.getElementById('progressFill').style.width = `${((current) / quizData.length) * 100}%`;
+            document.getElementById('questionNum').textContent = `Question ${current + 1} of ${quizData.length}`;
+            document.getElementById('questionText').textContent = q.q;
+            document.getElementById('quizFeedback').className = 'quiz-feedback';
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextBtn').classList.remove('visible');
+            answered = false;
+
+            const labels = ['A', 'B', 'C', 'D'];
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+            q.opts.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.innerHTML = `<span class="opt-label">${labels[i]}</span> ${opt}`;
+                btn.addEventListener('click', () => selectAnswer(i, btn));
+                container.appendChild(btn);
+            });
+            document.getElementById('scoreDisplay').textContent = score;
+        }
+
+        function selectAnswer(selected, btn) {
+            if (answered) return;
+            answered = true;
+            const q = quizData[current];
+            const allBtns = document.querySelectorAll('.quiz-option');
+            allBtns.forEach(b => b.disabled = true);
+
+            const feedback = document.getElementById('quizFeedback');
+            if (selected === q.correct) {
+                score++;
+                btn.classList.add('correct');
+                feedback.textContent = '✓ Correct! ' + q.explanation;
+                feedback.className = 'quiz-feedback show correct-fb';
+            } else {
+                btn.classList.add('wrong');
+                allBtns[q.correct].classList.add('correct');
+                feedback.textContent = '✗ Not quite. ' + q.explanation;
+                feedback.className = 'quiz-feedback show wrong-fb';
+            }
+            document.getElementById('scoreDisplay').textContent = score;
+            document.getElementById('nextBtn').classList.add('visible');
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            current++;
+            if (current < quizData.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        });
+
+        function showResult() {
+            document.getElementById('progressFill').style.width = '100%';
+            document.getElementById('quizGame').style.display = 'none';
+            const result = document.getElementById('quizResult');
+            result.classList.add('show');
+            document.getElementById('finalScore').textContent = `${score}/10`;
+
+            let icon, title, msg;
+            if (score >= 9) { icon = '🏆'; title = 'Miden Master!'; msg = 'Outstanding! You know Miden inside out.'; }
+            else if (score >= 7) { icon = '🥇'; title = 'Crypto Expert!'; msg = 'Great job! You have solid knowledge of Miden.'; }
+            else if (score >= 5) { icon = '🥈'; title = 'Good Effort!'; msg = 'You\'re getting there. Keep exploring Miden!'; }
+            else { icon = '📚'; title = 'Keep Learning!'; msg = 'Visit miden.xyz to learn more about the project.'; }
+
+            document.getElementById('resultIcon').textContent = icon;
+            document.getElementById('resultTitle').textContent = title;
+            document.getElementById('resultMsg').textContent = msg;
+        }
+
+        function restartQuiz() {
+            current = 0; score = 0;
+            document.getElementById('quizGame').style.display = 'block';
+            document.getElementById('quizResult').classList.remove('show');
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+
+</html>
